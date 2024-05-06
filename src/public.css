@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Passion+One:wght@400;700;900&display=swap');
+
+/* header styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.header-container {
+    background-color: rgb(214, 214, 214);
+    height: 60px;
+    width: 100%;
+    position: sticky;
+    display: inline-flex;
+    justify-content: space-around;
+    gap: 30%;
+    align-items: center;
+}
+
+#nav-bar-title {
+    font-family: "Calistoga", "Passion One";
+    color: #000;
+    /* padding-left: 20px; */
+    /* margin-left: 20%; */
+}
+
+.nav-buttons {
+    display: inline-flex;
+    gap: 25px;
+    /* margin-right: 20px; */
+}
+
+ul {
+    list-style-type: none;
+}
+
+.nav-links {
+    text-decoration: none;
+    font-size: large;
+}
+
+a:link {
+    color: rgb(58, 58, 58);
+}
+
+a:visited {
+    color: rgb(58, 58, 58);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.profile-container {
+    /* width: 90px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.logout-container {
+    margin-top: 45px;
+    position: absolute;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(214, 214, 214);
+    padding-bottom: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: solid;
+    border-width: 1px;
+}
+
+.logout-container:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.logout-text {
+    /* position: absolute; */
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* main styles */
+
+.main-container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* remove main, make it so that the image is part of a section,
+the image takes up the height of the section.  */
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-container {
+    width: 100%;
+    background-image: url("../public/animated-purple-color-gradient-motion-background-free-video.jpg");
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+
+}
+
+.main-title {
+    font-family: "Calistoga", "Passion One";
+    font-size: 13em;
+}
+
+.subtext {
+    width: 50%;
+    font-size: 2.2em;
+    justify-content: center;
+    text-align: center;
+}
+
+.add-colleges {
+    min-height: 50vh;
+}
+
+/* search bar styles */
+
+.search-area-cotainer {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    background-image: url("../public/360_F_313539495_TIfAx53PwhMQopiuu7J1RiY2lVzSWrep.jpg");
+    background-position: bottom;
+    height: 10vw;
+}
+
+.search-colleges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    width : 40%;
+    /* background-color: white; */
+    /* border-radius: 20px; */
+    /* height: 2vw; */
+    z-index: 1;
+}
+.search-colleges:focus-within {
+   border : solid;
+   border-radius: 20px;
+   background-color: white;
+}
+#searchbar {
+    /* backdrop-filter: blur(6px); */
+    margin: 10px;
+    padding: 10px;
+    padding-left: 2%;
+    border-radius: 20px;
+    width: 100%;
+    align-self: center;
+    box-sizing: border-box;
+    height: 3vw;
+}
+
+#searchbar:focus {
+    border: none;
+    outline: none;
+}
+
+.search-results {
+    display: none;
+    width: 100%;
+}
+
+#list {
+    /* background-color: white; */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    max-height: 15em;
+    overflow-y: scroll;
+    align-self: center;
+    
+    /* background-color: rgb(238, 236, 236);    */
+}
+
+#searchbar:focus + .search-results{
+    display : flex;
+}
+ 
+.college {
+    
+    font-size: 1em;
+    color:black;
+    padding: 10px;
+    /* align-self: flex-start; */
+    text-align: left;
+    
+    /*border-bottom: 1px solid #ccc; */
+    border-bottom: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.college:hover {
+    background: whitesmoke;
+}
+ 
+.college:last-child {
+    border-bottom: none;
+}
+
+.add-college-button {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+}
+ 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+ 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.college-thumbnails {
+    width: 70%;
+    height: 100vw;
+    position: relative;
+    
+}
+
+.college-number {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    color: gray;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
+}
+
+.thumbnail {
+    width: 85%;
+    border: solid;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    margin: 10px;
+    padding: 5px;
+    border: solid;
+}
+
+.delete-button {
+    margin-left: auto;
+    margin-right: 10px;
+    width: 30px;
+    height: auto;
+}
+
+/* essays and activities tab's styles */
+
+.top-image {
+    width: 100%;
+    height: 10vw;
+    background-image: url("../public/360_F_313539495_TIfAx53PwhMQopiuu7J1RiY2lVzSWrep.jpg");
+    background-position: bottom;
+}
+
+.doc:hover {
+    /* display: flex;
+    flex-direction: column; */
+    border: solid;
+    border-color: rgb(0, 170, 255);
+}
+
+.pic {
+    width: 165px;
+    height: 220px;
+    border: solid;
+    border-color: gray;
+    border-width: 1px;
+    background-image: url("../public/acastro_STK459_07.jpg");
+    background-position: center;
+    background-size: contain;
+    
+}
+
+/* .docTitle {
+    width: 135px;
+    max-height: 40px;
+    border: solid;
+    border-top: none;
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
+    height: 2.4em; 
+    padding-left: 3px; 
+    padding-right: 3px;
+    /* overflow: hidden; */
+    /* white-space: nowrap; */
+
+/* }  */
+
+.docTitle {
+    line-height: 1.2em;
+    height: 2.4em; 
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    font-weight: 550;
+    font-family: 'Times New Roman', Times, serif;
+    width: 165px;
+    max-height: 50px;
+    border: solid;
+    border-color: gray;
+    border-width: 1px;
+    border-top: none;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    background-color: whitesmoke;
+}
+
+.docs-container {
+    display: flex;
+    margin-top: 35px;
+    /* max-width: 60%; */
+    width: 60%;
+    /* height: 100%; */
+    overflow: auto;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* login styles */
+
+.main-login {
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    background-image: url("../public/animated-purple-color-gradient-motion-background-free-video.jpg");
+}
+
+.login-container {
+    border: solid;
+    padding: 20px;
+    height: 500px;
+    width: 450px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+}
+
+.title-and-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.login-title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    padding-left: 10px;
+}
+
+.username, .password, .login-button-container {
+    width: 80%;
+    margin: 20px 0;
+    height: 50px;
+    border-radius: 60px;
+}
+
+.login-button {
+    border-radius: 60px;
+    height: 100%;
+    width: 100%;
+    font-size: 1.3em;
+    /* background-image: url("../public/animated-purple-color-gradient-motion-background-free-video.jpg");
+    background-position: bottom 0 left 0; */
+    /* color: rgb(208, 208, 208) */
+}
+
+.error {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.error-box-container {
+    
+    width: 80%;
+    height: 50px;
+    background-color: rgb(250, 142, 142);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-text {
+    color: rgb(140, 46, 46);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+/* google login styles */
+.google-description {
+    text-align: center;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.button-outer {
+    display: flex;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    width: 70%;
+    height: 50px;
+    margin-top: 50px;
+    background-color: rgb(17, 116, 223);
+    border-radius: 3px;
+
+}
+
+#google-image {
+    margin-left: 3px;
+    border-radius: 3px;
+}
+
+.google-text-container {
+    width:100%;
+}
+
+.google-login-text {
+    font-size: large;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: 550;
+}
+
+/* .google-description {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.google-button {
+    width: 100%;
+    margin-top: 50px;
+    font-size: 1.3em;
+    padding: 5px 0;
+    background-color: rgb(212, 212, 212);
+    border-radius: 8px;
+} */
