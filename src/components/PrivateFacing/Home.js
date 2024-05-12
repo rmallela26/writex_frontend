@@ -142,7 +142,13 @@ const Home = () => {
       // const collegeObj = await response.json()
 
       //create google doc for this college
+      console.log(accessToken)
       const res = await checkGoogleToken(accessToken, setAccessToken)
+      if(res === "") {
+        console.log("navigating to google login")
+        navigate('/google-login')
+        return
+      }
       const docId = await createDoc(item.name, res, item.id)
       if(!docId) {
         navigate('/login')

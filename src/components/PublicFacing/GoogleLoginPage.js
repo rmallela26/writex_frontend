@@ -11,6 +11,7 @@ const GoogleLoginPage = () => {
 
   useEffect(() => {
     if(!checkTokenThere()) {
+        console.log("navigating to /login")
         navigate('/login')
         return
     } 
@@ -53,6 +54,7 @@ const GoogleLoginPage = () => {
     });
 
     const googleRefresh = async () => {
+        //SHOULD REFRESH BE HERE I DON'T THINK SO
         const refresh = '1//01B6rpvbuVgfOCgYIARAAGAESNwF-L9IrACJc7O_pVb2RvpTYJ_fd9fRSdejwgQHZy1bKqzw3XnYtJhuSGMIQViIZEKCpu5kmPYY'
         const tokens = await fetch('http://localhost:3500/auth/google-refresh', {
             method: "POST",
@@ -62,8 +64,12 @@ const GoogleLoginPage = () => {
             )
         })
 
+        console.log("===========================")
+        console.log(tokens)
+
         const myTokens = await tokens.json()
         console.log(myTokens)
+        console.log("=========BEARS==============")
     }
   
     // if(googleUser.length === 0) {

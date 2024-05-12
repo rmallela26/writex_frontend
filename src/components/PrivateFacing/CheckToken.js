@@ -114,7 +114,14 @@ const checkGoogleToken = async (accessToken, setAccessToken) => {
         const response2 = await fetchRequest('http://localhost:3500/auth/google-refresh', "POST", {
             refreshToken: refreshToken
         })
+        if(response2.status === 401) {
+            //navigate to google login
+            setAccessToken("")
+            return "";
+        }
         const items2 = await response2.json()
+        console.log("BEARSBEARSBEARS")
+        console.log(items2)
         setAccessToken(items2.access_token)
 
         //set access token in db

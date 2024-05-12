@@ -17,6 +17,9 @@ const Login = () => {
 
     const response = await fetchRequest('http://localhost:3500/users/google-access', "GET")
     const item = await response.json()
+
+    // item.accessToken = "" //REMOVE THIS
+
     if(item.accessToken === "") navigate('/google-login')
     else navigate('/home')
     return
