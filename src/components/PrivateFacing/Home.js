@@ -136,7 +136,9 @@ const Home = () => {
       if(Object.keys(item).length === 0) return; //check if item is empty
       else if (thumbnails.includes(item.name)) return; //we already have this college
       setNumColleges(numColleges+1)
+      
       console.log("starting")
+      //start spinner effect to show loading
 
       //request full info on this college (send id parameter)
       // const response = await fetch(`http://localhost:3500/one-college?id=${item.id}`)
@@ -170,8 +172,11 @@ const Home = () => {
       setThumbnails([...thumbnails, item.name].sort())
     }
 
-    makeUpdates();
-    console.log("done")
+    makeUpdates().then(() => {
+        //end spinner effect
+        console.log("done")
+      }
+    );
   }, [item])
 
   const [deletedCollege, setDeletedCollege] = useState('')
