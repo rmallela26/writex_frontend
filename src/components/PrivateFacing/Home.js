@@ -136,6 +136,7 @@ const Home = () => {
       if(Object.keys(item).length === 0) return; //check if item is empty
       else if (thumbnails.includes(item.name)) return; //we already have this college
       setNumColleges(numColleges+1)
+      console.log("starting")
 
       //request full info on this college (send id parameter)
       // const response = await fetch(`http://localhost:3500/one-college?id=${item.id}`)
@@ -170,6 +171,7 @@ const Home = () => {
     }
 
     makeUpdates();
+    console.log("done")
   }, [item])
 
   const [deletedCollege, setDeletedCollege] = useState('')
