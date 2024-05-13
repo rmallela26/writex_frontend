@@ -223,7 +223,6 @@ const Home = () => {
         <ul className='colleges-list'>
           {thumbnails.map((thumbnail) => (
             <Thumbnail 
-              // key={thumbnails.findIndex(x => x === thumbnail)} 
               key={parseInt(thumbnail, 26)}
               name={thumbnail} 
               setter={setDeletedCollege}
