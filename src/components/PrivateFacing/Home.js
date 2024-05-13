@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createDoc } from './CreateDoc'
 import Thumbnail from './Thumbnail'
+// import { Spinner } from 'react-bootstrap'
 const { checkTokenThere, refreshToken, fetchRequest, checkGoogleToken } = require('./CheckToken')
 
 const Home = () => {
@@ -131,6 +132,8 @@ const Home = () => {
 
   const [accessToken, setAccessToken] = useContext(Context);
 
+  const [loading, setLoading] = useState(false)
+
   useEffect(() => {
     const makeUpdates = async () => {
       if(Object.keys(item).length === 0) return; //check if item is empty
@@ -139,6 +142,7 @@ const Home = () => {
       
       console.log("starting")
       //start spinner effect to show loading
+      setLoading(true)
 
       //request full info on this college (send id parameter)
       // const response = await fetch(`http://localhost:3500/one-college?id=${item.id}`)
@@ -175,6 +179,7 @@ const Home = () => {
     makeUpdates().then(() => {
         //end spinner effect
         console.log("done")
+        setLoading(false)
       }
     );
   }, [item])
@@ -198,7 +203,10 @@ const Home = () => {
   }, [deletedCollege])
 
   const content = (
-    <main>
+    <main className={loading ? "loading-overlay" : ""}>
+      {/* <Spinner animation="border" role="status" style={{display: (!loading ? "none" : ""), top: 50, right: 50}}>
+        <span className="visually-hidden">Loading...</span>
+      </Spinner> */}
       <section className="search-area-cotainer">
         <form className="search-colleges" onSubmit={(e) => {e.preventDefault()}}>
           <input
