@@ -10,7 +10,7 @@ const Public = () => {
       </div>
 
       <section className="add-colleges">
-        <p>face</p>
+        <p>insert description</p>
       </section>
     </main>
   )
