@@ -4,7 +4,6 @@ import { useState, useEffect, useRef, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createDoc } from './CreateDoc'
 import Thumbnail from './Thumbnail'
-// import { Spinner } from 'react-bootstrap'
 const { checkTokenThere, refreshToken, fetchRequest, checkGoogleToken } = require('./CheckToken')
 
 const Home = () => {
@@ -204,9 +203,6 @@ const Home = () => {
 
   const content = (
     <main className={loading ? "loading-overlay" : ""}>
-      {/* <Spinner animation="border" role="status" style={{display: (!loading ? "none" : ""), top: 50, right: 50}}>
-        <span className="visually-hidden">Loading...</span>
-      </Spinner> */}
       <section className="search-area-cotainer">
         <form className="search-colleges" onSubmit={(e) => {e.preventDefault()}}>
           <input
