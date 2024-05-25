@@ -201,6 +201,17 @@ const Home = () => {
     makeDeletion();
   }, [deletedCollege])
 
+  const createKey = (input) => {
+  
+    let hash = 0;
+    for (let i = 0; i < input.length; i++) {
+      const char = input.charCodeAt(i);
+      hash = (hash << 5) - hash + char;
+      hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+  }
+
   const content = (
     <main className={loading ? "loading-overlay" : ""}>
       <section className="search-area-cotainer">
@@ -234,7 +245,7 @@ const Home = () => {
         <ul className='colleges-list'>
           {thumbnails.map((thumbnail) => (
             <Thumbnail 
-              key={parseInt(thumbnail, 26)}
+              key={createKey(thumbnail)}
               name={thumbnail} 
               setter={setDeletedCollege}
             />
